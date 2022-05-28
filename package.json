@@ -4,9 +4,48 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs",
+    "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.3"
+    "@headlessui/vue": "^1.6.3",
+    "@heroicons/vue": "^1.0.6",
+    "@intlify/nuxt3": "^0.2.2",
+    "@nuxt/content": "^2.0.0",
+    "@nuxtjs/composition-api": "^0.32.0",
+    "@nuxtjs/eslint-config-typescript": "^10.0.0",
+    "@nuxtjs/eslint-module": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^5.1.2",
+    "@pinia/nuxt": "^0.1.9",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "@vueuse/core": "^8.5.0",
+    "@vueuse/nuxt": "^8.5.0",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^9.0.1",
+    "lint-staged": "^12.4.2",
+    "nuxt": "3.0.0-rc.3",
+    "pinia": "^2.0.14",
+    "postcss": "^8.4.14",
+    "prettier": "^2.6.2",
+    "tailwindcss-debug-screens": "^2.2.1",
+    "typescript": "^4.7.2",
+    "vite-plugin-eslint": "^1.6.1",
+    "vite-svg-loader": "^3.3.0"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,vue,html,css,scss}": [
+      "yarn lintfix"
+    ]
   }
 }
